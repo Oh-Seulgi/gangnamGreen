@@ -18,17 +18,27 @@
 
         $('#box').css(mystyle);
         //초기값으로 화면 노출
-        $('#btns button').click(function(){ // 트리거 실행됨
+        $('#btns button').click(function(){ // 트리거 실행됨 : 적용하기버튼 클릭하면
+
+
+         //각 인풋의 값이 기입되면 그 값으로 수정되고 아니면 초기값으로 유지해라
+          if($(mybtns[0]).val() != '' ){ //너비인풋에 값이 비어있지 않다면
+            mystyle.width = $(mybtns[0]).val(); //너비값을 수정한다.
+          }
+         if($(mybtns[1]).val() != '' ){//높이인풋에 값이 들어갔다면
+            mystyle.height = $(mybtns[1]).val(); //높이값 새롭게 변경
+         }
+         if($(mybtns[2]).val() != '' ){//배경인풋에 값이 들어갔다면
+            mystyle.background = $(mybtns[2]).val();//배경값 새롭게 변경
+         }
+        $('#box').css(mystyle);
+
 
         });
 
 
 
-<<<<<<< HEAD
 
-=======
-    }); ////click
->>>>>>> 30443ba3b919e8502dd4e576f045fde86de37eb5
       });////ready
     </script>
 </head>
