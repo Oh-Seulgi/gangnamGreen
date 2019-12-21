@@ -19,7 +19,11 @@
         $('#box').css(mystyle);
         //초기값으로 화면 노출
         $('#btns button').click(function(){ // 트리거 실행됨 : 적용하기버튼 클릭하면
-
+          mybtns.each(function(){ // 첫째부터 처리 : each메서드로 각각 input마다 처리해라
+              var _thisVal = $(this).val(); //input의 입력된 테이터값을 각각 담아라
+              var _thisTitle = $(this).attr('data-title'); //각 input의 data-title속성값 담기
+              
+          });
 
          //각 인풋의 값이 기입되면 그 값으로 수정되고 아니면 초기값으로 유지해라
           if($(mybtns[0]).val() != '' ){ //너비인풋에 값이 비어있지 않다면
