@@ -22,7 +22,12 @@
           mybtns.each(function(){ // 첫째부터 처리 : each메서드로 각각 input마다 처리해라
               var _thisVal = $(this).val(); //input의 입력된 테이터값을 각각 담아라
               var _thisTitle = $(this).attr('data-title'); //각 input의 data-title속성값 담기
-              
+ //첫번째 인풋부터 처리하는데 그 인풋의 데이터가 없다면
+              if( _thisVal == '' ){ //값이 없다면 실행
+              alert(_thisTitle + '비어있군요!'); //타이틀이 비어있다고 경고창노출
+              $(this).focus(); //그 input에 커서조준
+              return false; //여기서 끝내기 때문에 each종료가 된다.
+            }
           });
 
          //각 인풋의 값이 기입되면 그 값으로 수정되고 아니면 초기값으로 유지해라
